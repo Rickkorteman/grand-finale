@@ -1,3 +1,8 @@
+*{
+    margin:0;
+    padding:0;
+}
+
 .navbar.navbar, .navbar-default.navbar{
 	font-weight: bold;
 	background: #FFB300;
@@ -9,4 +14,14 @@
 						linear-gradient(rgb(255, 255, 255), 
 										rgb(255, 255, 255)) 
 						!important;
+}
+
+.news{
+    height:90vh;
+    background:#E6E6E6;
+}
+
+.news-item{
+    height:100px;
+    background:#F00;
 }
