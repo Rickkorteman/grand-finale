@@ -27,7 +27,8 @@
 		            <li class="active"><a href="javascript:void(0)">All News</a></li>
 		            <li><a href="javascript:void(0)">Hardware</a></li>
 		            <li><a href="javascript:void(0)">Mobile</a></li>
-		            <li><a href="javascript:void(0)">Web</a></li>
+                    <li><a href="javascript:void(0)">Web</a></li>
+                    <li>{{selectedNews}}</li>
 		        </ul>
 		        
 		        <ul class="nav navbar-nav navbar-right">
@@ -47,7 +48,7 @@
 		        </ul>
 		    </div>
 		</div>
-
+        
         <div class="container-fluid content" ng-repeat="news in news">
             <div class="row">
                 <div class="col-md-8 col-md-push-2 news well">
@@ -55,12 +56,16 @@
                     	<h1>{{news.title}}</h1>
                         {{news.body | limitTo:500}}...
                         <div class="clearfix"></div>
-                        <a href class="btn btn-info pull-right">Info</a>
+                        <a class="btn btn-info pull-right" ng-click="selectedNews(news)">Info</a>
                         <div class="clearfix"></div>
                     </article>
                 </div>
             </div>
 		</div>
+
+        <div class="detail col-md-8" >
+            
+        </div>
 
 	</div>
 
