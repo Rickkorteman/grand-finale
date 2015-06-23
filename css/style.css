@@ -1,17 +1,18 @@
-*{
+* {
     margin:0;
     padding:0;
 }
 
-.navbar.navbar, .navbar-default.navbar{
+.navbar.navbar, .navbar-default.navbar {
 	font-weight: bold;
 	background: #FFB300;
 }
-.btn, .btn-info{
+.btn, .btn-info {
+	font-weight: bold;
 	background: #FFC107!important;
 }
 
-.form-control{
+.form-control {
 	background-image: 	linear-gradient(rgb(255, 179, 0), 
 										rgb(255, 179, 0)),
 						linear-gradient(rgb(255, 255, 255), 
@@ -19,11 +20,32 @@
 						!important;
 }
 
-.news{
+.animate{
+	-webkit-transition:all 0.8s ease-out;
+  	transition:all 0.8s ease-out;
+}
+
+.content {
     height:100%;
+}
+
+.detail {
+    height: 100%;
     background:#E6E6E6;
 }
 
-.detail{
-    height:100%;
+.detail.ng-hide {
+	position: absolute;
+	opacity: 0;
+	overflow: hidden;
+	margin-left: 2000px;
+	margin-right: -2000px;
+}
+
+.cont-wrapper.ng-hide {
+	position: absolute;
+	opacity: 0;
+	overflow: hidden;
+	margin-left: -2000px;
+	margin-right: 2000px;
 }

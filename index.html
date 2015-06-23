@@ -28,43 +28,39 @@
 		            <li><a href="javascript:void(0)">Hardware</a></li>
 		            <li><a href="javascript:void(0)">Mobile</a></li>
                     <li><a href="javascript:void(0)">Web</a></li>
-                    <li>{{selectedNews}}</li>
 		        </ul>
 		        
 		        <ul class="nav navbar-nav navbar-right">
 			        <form class="navbar-form navbar-left">
-			            <input class="form-control col-lg-8" placeholder="Search" type="text">
+			            <input class="form-control col-lg-8" ng-model="searchQuery" placeholder="Search" type="text">
 			        </form>	
-		            <li class="dropdown">
-		                <a href="bootstrap-elements.html" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
-		                <ul class="dropdown-menu">
-		                    <li><a href="javascript:void(0)">Action</a></li>
-		                    <li><a href="javascript:void(0)">Another action</a></li>
-		                    <li><a href="javascript:void(0)">Something else here</a></li>
-		                    <li class="divider"></li>
-		                    <li><a href="javascript:void(0)">Separated link</a></li>
-		                </ul>
-		            </li>
 		        </ul>
 		    </div>
 		</div>
-        
-        <div class="container-fluid content" ng-repeat="news in news">
-            <div class="row">
-                <div class="col-md-8 col-md-push-2 news well">
-                    <article class="news-item col-md-10 col-md-push-1">
-                    	<h1>{{news.title}}</h1>
-                        {{news.body | limitTo:500}}...
-                        <div class="clearfix"></div>
-                        <a class="btn btn-info pull-right" ng-click="selectedNews(news)">Info</a>
-                        <div class="clearfix"></div>
-                    </article>
-                </div>
-            </div>
+		
+		<div class="cont-wrapper animate" ng-hide="selectedNews">
+	        <div class="container-fluid content" 
+	        	 ng-repeat="news in news | filter:searchQuery">
+	            <div class="row">
+	                <div class="col-md-8 col-md-push-2 news well">
+	                    <article class="news-item col-md-10 col-md-push-1">
+	                    	<h1>{{news.title}}</h1>
+	                        {{news.body | limitTo:500}}...
+	                        <div class="clearfix"></div>
+	                        <a class="btn btn-info pull-right" ng-click="selectNews(news)">Info</a>
+	                        <div class="clearfix"></div>
+	                    </article>
+	                </div>
+	            </div>
+			</div>
 		</div>
 
-        <div class="detail col-md-8" >
-            
+        <div class="detail animate col-md-8 col-md-push-2 well" ng-show="selectedNews">
+            <article class="news-detail col-md-10 col-md-push-1">
+            	<h1>{{selectedNews.title}}</h1>
+            	<p>{{selectedNews.body}}</p>
+            	<a class="btn btn-primary" ng-click="selectedNews=''">terug</a>
+            </article>
         </div>
 
 	</div>
