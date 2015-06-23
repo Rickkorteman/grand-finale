@@ -48,11 +48,15 @@
 		    </div>
 		</div>
 
-        <div class="container-fluid content">
+        <div class="container-fluid content" ng-repeat="news in news">
             <div class="row">
                 <div class="col-md-8 col-md-push-2 news well">
                     <article class="news-item col-md-10 col-md-push-1">
-                        
+                    	<h1>{{news.title}}</h1>
+                        {{news.body | limitTo:500}}...
+                        <div class="clearfix"></div>
+                        <a href class="btn btn-info pull-right">Info</a>
+                        <div class="clearfix"></div>
                     </article>
                 </div>
             </div>

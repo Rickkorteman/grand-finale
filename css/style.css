@@ -7,6 +7,9 @@
 	font-weight: bold;
 	background: #FFB300;
 }
+.btn, .btn-info{
+	background: #FFC107!important;
+}
 
 .form-control{
 	background-image: 	linear-gradient(rgb(255, 179, 0), 
@@ -17,11 +20,6 @@
 }
 
 .news{
-    height:90vh;
+    height:100%;
     background:#E6E6E6;
-}
-
-.news-item{
-    height:250px;
-    background:#FFB300;
 }
